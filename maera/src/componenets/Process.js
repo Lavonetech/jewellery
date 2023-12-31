@@ -9,9 +9,7 @@ import Footer from '../items/Footer'
 function Process() {
   return (
     <div>
-      <Box sx={{ textAlign: 'center', pt:0, }}>
-          <img src="/images/lo.png"  style={{ height: '200px', width: '200px',margin:"-3rem 0 -3rem 0" }} />
-        </Box>
+      
 
         <Navbar/>
      <div className="container">

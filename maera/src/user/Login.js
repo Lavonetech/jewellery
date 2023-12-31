@@ -52,7 +52,7 @@ function Login () {
     <div className='container'>
                  <div className='row'>
                  <Box sx={{ textAlign: 'center', pt:0,mb:-10 }}>
-          <img src="/images/lo.png"  style={{ height: '200px', width: '200px',margin:"-3rem 0 -3rem 0" }} />
+          <img src="/images/l.png"  style={{ height: '200px', width: '200px',margin:"-3rem 0 -3rem 0" }} />
         </Box>
                     <div className='col-md-6 col-lg-4 mx-auto form-center'>
                         {

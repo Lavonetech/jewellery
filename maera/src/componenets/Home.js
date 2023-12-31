@@ -122,7 +122,7 @@ const Id =useParams();
            
               <h2>Exceptional Craftsmanship</h2>
               <Lineanimation/>
-              <img src="images/image 1.jpeg" alt="image" loading="lazy" />
+              <img src="images/image1.jpeg" alt="image" loading="lazy" />
             </div>
             <div className="col-lg-6 col-sm-6 inner-right">
               <div>
