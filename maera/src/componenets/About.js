@@ -10,9 +10,6 @@ import { Box } from '@mui/material'
 function  About() {
   return (
     <div>
-      <Box sx={{ textAlign: 'center', pt:0, }}>
-          <img src="/images/lo.png"  style={{ height: '200px', width: '200px',margin:"-3rem 0 -3rem 0" }} />
-        </Box>
         <Navbar/>
 
         <div >
@@ -23,7 +20,7 @@ function  About() {
       
       <Carousel.Item  style={{
          position:'relative',
-          backgroundImage: `url('images/about us page.png')`,
+          backgroundImage: `url('images/aboutus.png')`,
           backgroundSize: "cover",
           backgroundPosition:'center',
           height: "90vh",

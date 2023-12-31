@@ -110,7 +110,7 @@ const drawer = (
       </ListItem>
       <ListItem disablePadding>
         <ListItemButton sx={{ textAlign: 'center' }}>
-          <a href="/process" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <a href="/mprocess" style={{ textDecoration: 'none', color: 'inherit' }}>
             <ListItemText children="PROCESS" />
           </a>
         </ListItemButton>

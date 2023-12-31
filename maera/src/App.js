@@ -52,7 +52,7 @@ function App() {
           <Route path="/productdetails/:id"element={<ProductDetails />} />
           <Route exact path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/process" element={<Process/>} />
+          <Route path="/mprocess" element={<Process/>} />
           <Route path="/about-us" element={<About/>} />
           <Route path="/contact" element={<Contact/>} />
           <Route path="/gallery" element={<Gallery/>} />
