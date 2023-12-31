@@ -75,6 +75,7 @@ const Id =useParams();
       <Carousel.Item  style={{
         position:'relative',
           backgroundImage: `url('images/1.png')`,
+          loading:"lazy",
           backgroundSize: "cover",
           backgroundRepeat:'no-repeat',
           loading:"lazy",
@@ -88,6 +89,7 @@ const Id =useParams();
       </Carousel.Item>
       <Carousel.Item  style={{
           backgroundImage: `url('images/2.png')`,
+          loading:"lazy",
           backgroundSize: "cover",
           loading:"lazy",
           height: "90vh",
@@ -99,6 +101,7 @@ const Id =useParams();
       </Carousel.Item>
       <Carousel.Item  style={{
           backgroundImage: `url('images/3.png')`,
+          loading:"lazy",
           backgroundSize: "cover",
           loading:"lazy",
           height: "90vh",

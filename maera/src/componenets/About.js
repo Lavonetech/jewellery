@@ -20,7 +20,8 @@ function  About() {
       
       <Carousel.Item  style={{
          position:'relative',
-          backgroundImage: `url('images/aboutus.png')`,
+          backgroundImage: `url('images/aboutu.png')`,
+          loading:"lazy",
           backgroundSize: "cover",
           backgroundPosition:'center',
           height: "90vh",
@@ -40,8 +41,8 @@ function  About() {
     <div className='row justify-content-center'>
       <div className='col-lg-9 col-xl-9'>
         <p className="mb-3">Meet the visionaries behind Maera Jewellery, where the fusion of craftsmanship and luxury takes center stage. Our two founders bring a unique blend of expertise to the world of jewelry. One founder is a certified gemologist, ensuring that the finest materials and gemstones, including exquisite Ceylonese blue sapphires, are at the core of our creations. The other founder, an engineer by profession, has an innate talent for design that flows effortlessly.</p>
-        <p className="mb-3">Meet the visionaries behind Maera Jewellery, where the fusion of craftsmanship and luxury takes center stage. Our two founders bring a unique blend of expertise to the world of jewelry. One founder is a certified gemologist, ensuring that the finest materials and gemstones, including exquisite Ceylonese blue sapphires, are at the core of our creations. The other founder, an engineer by profession, has an innate talent for design that flows effortlessly.</p>
-        <p className="mb-3">Meet the visionaries behind Maera Jewellery, where the fusion of craftsmanship and luxury takes center stage. Our two founders bring a unique blend of expertise to the world of jewelry. One founder is a certified gemologist, ensuring that the finest materials and gemstones, including exquisite Ceylonese blue sapphires, are at the core of our creations. The other founder, an engineer by profession, has an innate talent for design that flows effortlessly.</p>
+        <p className="mb-3">Hailing from a family with deep roots in the jewelry industry, our founders decided to leverage their rich heritage and knowledge to create something extraordinary. At Maera Jewellery, our mission is to bring forth unparalleled, complex pieces that are meticulously crafted with love and precision.</p>
+        <p className="mb-3">What truly sets us apart is our commitment to you, the customer. Our design process revolves around your desires and aspirations, ensuring that every piece we create is a reflection of your unique style and sentiment. Based in Ceylon, we take immense pride in our Ceylonese origins and the exceptional craftsmanship that is synonymous with our heritage. We source exquisite blue sapphires and other gems from Ceylon, in addition to handpicking diamonds and other precious stones from the world's best sources. While we operate from the heart of Ceylon, our global reach primarily serves North America and Europe. At Maera Jewellery, we are here to turn your jewelry dreams into a stunning reality, one exceptional piece at a time.</p>
       </div>
     </div>
 

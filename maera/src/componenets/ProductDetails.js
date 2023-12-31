@@ -155,13 +155,13 @@ function ProductDetails() {
        <div
         
       >
-        <Box sx={{ textAlign: 'center', pt:0, }}>
+        {/* <Box sx={{ textAlign: 'center', pt:0, }}>
           <img src="/images/lo.png"  style={{ height: '200px', width: '200px',margin:"-3rem 0 -3rem 0" }} />
-        </Box>
+        </Box> */}
         <Navbar />
        
       </div>
-      <div className="py-5">
+      <div className="py-5 mt-5">
         <div className="container">
           <div className="row">
        
@@ -177,14 +177,14 @@ function ProductDetails() {
               
             
             <div className=" mb-3 d-flex justify-content-center">
-              <a class="rounded-4" target="_blank" data-type="image">
+              <a  target="_blank" data-type="image">
                 <img
                   style={{
                     maxWidth: "100%",
                     maxHeight: "80vh",
                     margin: "auto",
                   }}
-                  class="rounded-4 fit"
+                 
                   src={`http://localhost:5003/${products.image}`}
                 />
               </a>
@@ -209,15 +209,18 @@ function ProductDetails() {
               <div className="mt-3">
                 <details >
                   <summary>Size & Fit</summary>
-                  <p></p>
+                  <p>To determine your ring size, kindly contact our team, and we will provide you with guidance on how to accurately measure it from the comfort of your own home.
+
+If you don't find the size you're seeking listed, we provide inclusive sizing at no extra charge.
+</p>
                 </details>
                 <details>
-                  <summary>Soucing</summary>
-                  <p></p>
+                  <summary>Sourcing</summary>
+                  <p>​​All of our pieces are meticulously crafted by hand in Sri Lanka, and we take pride in utilizing ethically sourced metals and gemstones in their creation.</p>
                 </details>
                 <details>
-                  <summary>Delivery & Return</summary>
-                  <p></p>
+                  <summary>Shipping and Delivery</summary>
+                  <p>All shipments are dispatched fully insured and include tracking information for your convenience. Please note that shipping times may vary depending on the type of jewelry, ensuring that each piece receives the attention and care it deserves during transit. Rest assured, our commitment to secure and efficient shipping ensures your handcrafted treasures reach you in perfect condition.</p>
                 </details>
               </div>
               {successMessage && 

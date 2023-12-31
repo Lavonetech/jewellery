@@ -43,11 +43,8 @@ const [errorMessage,setErrorMessage]=useState("");
       
   return (
     <div>
-      <Box sx={{ textAlign: 'center', pt:0, }}>
-          <img src="/images/lo.png"  style={{ height: '200px', width: '200px',margin:"-3rem 0 -3rem 0" }} />
-        </Box>
         <Navbar/>
-        <section className="section-products" id="section">
+        <section className="section-products mt-3" id="section">
         <div className="container">
           <div className="row text-align-center">
        
