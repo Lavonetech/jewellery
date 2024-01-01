@@ -24,7 +24,7 @@ function EditUser () {
     useEffect(() => {
       const fetchUser = async () => {
         try {
-          const response = await axios.get(`http://localhost:5003/getuserbyid/${id}`);
+          const response = await axios.get(`http://63.250.47.54:5003/getuserbyid/${id}`);
           console.log(response.data)
           if (response.status === 200) {
             const userData = response.data.user;
@@ -62,7 +62,7 @@ function EditUser () {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        const response = await axios.put(`http://localhost:5003/updateuser/${id}`,user);
+        const response = await axios.put(`http://63.250.47.54:5003/updateuser/${id}`,user);
     
         if (response) {
           console.log("User updated successfully",response);

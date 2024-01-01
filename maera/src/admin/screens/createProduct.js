@@ -46,7 +46,7 @@ const CreateProduct = () => {
      formData.append('category',category);
      formData.append('description', description);
       
-      const response = await axios.post("http://localhost:5003/createproduct",formData)
+      const response = await axios.post("http://63.250.47.54:5003/createproduct",formData)
        
       if(response){
         setSuccessMessage("Product created successfuly.You will redirect to the dashbord");

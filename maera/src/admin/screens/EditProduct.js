@@ -22,7 +22,7 @@ function EditProduct() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:5003/getproductbyid/${id}`);
+        const response = await axios.get(`http://63.250.47.54:5003/getproductbyid/${id}`);
         console.log(response.data)
         if (response.status === 200) {
           const productData = response.data.formattedProduct;
@@ -67,7 +67,7 @@ function EditProduct() {
       formData.append("category", product.category);
       formData.append("description", product.description);
 
-      const response = await axios.put(`http://localhost:5003/update/${id}`, product);
+      const response = await axios.put(`http://63.250.47.54:5003/update/${id}`, product);
       console.log(response.data)
       if (response.status === 200) {
         console.log("Product updated successfully",response);

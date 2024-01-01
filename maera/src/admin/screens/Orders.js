@@ -56,7 +56,7 @@ function Orders () {
   useEffect(() => {
     const getOrders = async () => {
       try {
-        const response = await axios.get("http://localhost:5003/getorders");
+        const response = await axios.get("http://63.250.47.54:5003/getorders");
         console.log(response.data)
         if (response.status===201) {
 

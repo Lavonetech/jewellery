@@ -52,7 +52,7 @@ function ProductDetails() {
           message
         });
     
-        const response=await axios.post('http://localhost:5003/createorder',order);
+        const response=await axios.post('http://63.250.47.54:5003/createorder',order);
         if(response.status===201){
           console.log("order success")
           setSuccessMessage("Your order placed.We will contact you soon");
@@ -87,7 +87,7 @@ function ProductDetails() {
   useEffect(()=>{
     const getProductData=async ()=>{
       try{
-        const response=await axios.get("http://localhost:5003/getproduct");
+        const response=await axios.get("http://63.250.47.54:5003/getproduct");
         if(response.status===200){
          const formattedData=response.data;
 
@@ -120,7 +120,7 @@ function ProductDetails() {
       setLoading(true);
       
       try {
-        const response = await axios.get(`http://localhost:5003/getproductbyid/${id}`);
+        const response = await axios.get(`http://63.250.47.54:5003/getproductbyid/${id}`);
         console.log(response.data)
         if (response.status === 200) {
           const formattedData = response.data;
@@ -185,7 +185,7 @@ function ProductDetails() {
                     margin: "auto",
                   }}
                  
-                  src={`http://localhost:5003/${products.image}`}
+                  src={`http://63.250.47.54:5003/${products.image}`}
                 />
               </a>
             </div>

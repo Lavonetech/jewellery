@@ -25,7 +25,7 @@ function Products() {
       width: 150,
       renderCell: (params) => (
         <img
-        src={`http://localhost:5003/${params.value}`}
+        src={`http://63.250.47.54:5003/${params.value}`}
         alt={params.row.image}
         style={{ width: "80px", height: "120px",margin:'5px 0 5px 0',border:'0.5px #FF7070 solid' }}
       />
@@ -72,7 +72,7 @@ function Products() {
   const handleDelete = async (itemId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5003/delete/${itemId}`);
+        `http://63.250.47.54:5003/delete/${itemId}`);
 
       if (response) {
         const updatedProduct=product.filter((p)=>p.id !==itemId) //refreshing products after deleted
@@ -114,7 +114,7 @@ function Products() {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:5003/getproduct");
+        const response = await axios.get("http://63.250.47.54:5003/getproduct");
         if (response.data) {
           console.log("success");
 

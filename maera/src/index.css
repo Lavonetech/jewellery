@@ -11,6 +11,22 @@ html{
 .details{
   background-color: #000;
 }
+@font-face {
+  font-family: 'Sometimes Times';
+  src: local('Sometimes Times'), 
+  url('/public/fonts/Sometimes-Times-X/Sometimes Times.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BentonSans Book';
+  src: local('BentonSans'), 
+       url('/public/fonts/BentonSans Book/BentonSans Book.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #root {
   --text-color-primary: #1E1E1E;
   --text-color-secondary: #252D32;
@@ -55,7 +71,7 @@ h5{
   
 font-size: 15px;
 line-height: 1.5;
-font-family: 'BentonSans';
+font-family: 'BentonSans Book';
 }
 a{
   position: relative;
@@ -346,7 +362,6 @@ video{
  width: 80%;
  max-height: 80vh;
   margin-top:1rem;
-  border-radius: 2rem 2rem  2rem 2rem;
   box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
   background-size:cover ;
 }
@@ -515,7 +530,6 @@ transform:scale(1.2,1.2) rotate(5deg)
   max-height: 700px;
   overflow: hidden;
   margin-top:1rem;
-  border-radius: 1rem 1rem  1rem 1rem;
   
 }
 

@@ -16,7 +16,7 @@ const [errorMessage,setErrorMessage]=useState("");
     useEffect(()=>{
         const getProductData=async ()=>{
           try{
-            const response=await axios.get("http://localhost:5003/getproduct");
+            const response=await axios.get("http://63.250.47.54:5003/getproduct");
             if(response.status===200){
              const formattedData=response.data;
     
@@ -66,7 +66,7 @@ const [errorMessage,setErrorMessage]=useState("");
                 <div  className="single-product">
                 <Link to={`/productdetails/${product.id}`}>
                   <div className="part-1">
-                 <img src={`http://localhost:5003/${product.image}`} alt="product-image" />
+                 <img src={`http://63.250.47.54:5003/${product.image}`} alt="product-image" />
                     <ul>
                       <li>
                         <a href="#">

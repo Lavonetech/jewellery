@@ -27,7 +27,7 @@ const userRegister = async (e) => {
             password,
         };
 
-        const response = await axios.post('http://localhost:5003/createuser', user);
+        const response = await axios.post('http://63.250.47.54:5003/createuser', user);
 
         if (response.status === 200) {
             // Handle successful response

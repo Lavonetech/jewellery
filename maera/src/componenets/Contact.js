@@ -8,9 +8,7 @@ import { Box } from '@mui/material'
 function Contact () {
   return (
     <div>
-        <Box sx={{ textAlign: 'center', pt:0, }}>
-          <img src="/images/lo.png"  style={{ height: '200px', width: '200px',margin:"-3rem 0 -3rem 0" }} />
-        </Box>
+        
         <Navbar/>
         <section>
             <div className='container'>

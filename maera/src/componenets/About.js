@@ -98,30 +98,6 @@ function  About() {
             <p className="mb-3">At Maera Jewellery, our mission is to transcend traditional boundaries in high jewelry, crafting exceptional pieces that tell unique stories. Guided by artisanal craftsmanship and an unwavering commitment to ethical gemstone sourcing, we bring custom creations to life with meticulous attention to detail. Our customer-centric approach ensures an unparalleled experience, delivering timeless, handcrafted treasures that redefine the essence of elegance.</p>
             </div>
             
-            {/* <div className='d-flex mt-5'>
-            <div class="col-12 col-md-6">
-                <div class="d-flex">
-                  <div class="me-4 text-primary ">
-                  <FontAwesomeIcon icon={faGem} style={{ fontSize: '2em', color: '#ffbf00 ' }}/>
-                  </div>
-                  <div>
-                    <h4 class="mb-3">Innovative Craftsmanship</h4>
-                    <p class="text-secondary mb-0">Pioneer inventive design, shaping the future of high craftsmanship.</p>
-                  </div>
-                </div>
-              </div>
-            <div class="col-12 col-md-6">
-                <div class="d-flex">
-                  <div class="me-4 text-primary ">
-                  <FontAwesomeIcon icon={faGem} style={{ fontSize: '2em', color: '#ffbf00 ' }}/>
-                  </div>
-                  <div>
-                    <h4 class="mb-3">Ethical Excellence</h4>
-                    <p class="text-secondary mb-0">Commitment to responsible practices, excellence in ethical gem crafting.</p>
-                  </div>
-                </div>
-              </div>
-            </div> */}
             
         </div>
         

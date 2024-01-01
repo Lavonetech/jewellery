@@ -50,7 +50,7 @@ function Customers () {
     useEffect(() => {
         const getUsers = async () => {
           try {
-            const response = await axios.get("http://localhost:5003/getusers");
+            const response = await axios.get("http://63.250.47.54:5003/getusers");
             console.log(response.data)
             if (response.data) {
               console.log("success");
