@@ -18,7 +18,7 @@ function Contact () {
                         <div className='item-box-content'>
                         <FontAwesomeIcon icon={faLocation} style={{ fontSize: '3em', color: '#3A4750 ' }}/>
                     <h4 className='mt-3'>Address</h4>
-                    <p className='mb-1'>Colombo | Vancouver, Sri Lanka</p>
+                    <p className='mb-1'>Colombo | Vancouver</p>
                         </div>
                     </div>
                    
@@ -34,7 +34,7 @@ function Contact () {
                         <div className='item-box-content'>
                         <FontAwesomeIcon icon={faVoicemail} style={{ fontSize: '3em', color: '#3A4750 ' }}/>
                     <h4 className='mt-3'>Email</h4>
-                    <p className='mb-1'>info@maerajewellery.com</p>
+                    <p className='mb-1'>inquiries@maerajewellery.com</p>
                         </div>
                     </div>
                    

@@ -231,9 +231,9 @@ If you don't find the size you're seeking listed, we provide inclusive sizing at
       </div>  
     
       }
-              <h4 className="justify-content-center mt-3">
-                  Customize design you want
-                </h4>
+              <h3 className="justify-content-center mt-3">
+                  Customize your design
+                </h3>
                 
                 <div className="mt-3">
                   <form>
@@ -287,7 +287,7 @@ If you don't find the size you're seeking listed, we provide inclusive sizing at
                   </div>
                   {category && 
                   <div className="d-flex mt-2">
-                  <h5>Size</h5>
+                  <h5> Size</h5>
 
                   <select
                   value={size}
@@ -333,7 +333,7 @@ If you don't find the size you're seeking listed, we provide inclusive sizing at
                  
                 
                 <div className="d-grid mt-3">
-                <button onClick={placeOrder}class="btn full-wdth-btn" type="button">Place Order Now</button>
+                <button onClick={placeOrder}class="btn full-wdth-btn " type="button">Place Order Now</button>
                 </div>
                   </form>
                   </div>
@@ -363,7 +363,7 @@ If you don't find the size you're seeking listed, we provide inclusive sizing at
                 <div  className="single-product">
                 <Link to={`/productdetails/${product.id}`}>
                   <div className="part-1">
-                 <img src={`http://localhost:5003/${product.image}`} alt="product-image" />
+                 <img src={`http://63.250.47.54:5003/${product.image}`} alt="product-image" />
                     <ul>
                       <li>
                         <a href="#">

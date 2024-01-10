@@ -103,6 +103,13 @@ const drawer = (
     <List>
       <ListItem disablePadding>
         <ListItemButton sx={{ textAlign: 'center' }}>
+          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <ListItemText children="HOME" />
+          </Link>
+        </ListItemButton>
+      </ListItem>
+      <ListItem disablePadding>
+        <ListItemButton sx={{ textAlign: 'center' }}>
           <Link to="/about-us" style={{ textDecoration: 'none', color: 'inherit' }}>
             <ListItemText children="ABOUT US" />
           </Link>
@@ -117,8 +124,8 @@ const drawer = (
       </ListItem>
       <ListItem disablePadding>
         <ListItemButton sx={{ textAlign: 'center' }}>
-          <Link to="/gallery" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <ListItemText primary="GALLERY" />
+          <Link to="/ourcreation" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <ListItemText primary="OUR CREATION" />
           </Link>
         </ListItemButton>
       </ListItem>
@@ -193,14 +200,14 @@ const drawer = (
           aria-label="open drawer"
           edge="start"
           onClick={handleDrawerToggle}
-         
+         style={{marginLeft:'6rem'}}
         >
           <MenuIcon sx={{color:'#1E1E1E'}} />
         </IconButton>
        
         </Box>
        <div className='d-flex align-items-center justify-content-center logo'>
-          <img src="/images/logo-1.png"  style={{ height: '70x', width: '90px' }} />
+          <Link to="/"><img src="/images/logo-1.png"  style={{ height: '70x', width: '90px' }} /></Link>
           </div>
         <Box sx={{  display: { xs: 'none', sm: 'block'}}}>
          

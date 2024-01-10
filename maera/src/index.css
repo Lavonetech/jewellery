@@ -33,8 +33,8 @@ html{
   --main-color: #ffffff;
   --btn-color-primary: #FF7070;
   --btn-secondary-color: #D4D4D4;
-  --heading-primary: 42px;
-  --heading-secondary: 28px;
+  --heading-primary: 28px;
+  --heading-secondary: 17px;
   --font-family-main:'Sometimes Times';
 }
 
@@ -47,14 +47,17 @@ h1{
  
 }
 h2{
-  font-family: var(--font-family-main);
+  font-family: 'Amiri, serif';
   font-size: var(--heading-primary);
- 
-  font-weight:500
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
 }
 h3{
-  font-family: var(--font-family-main);
+  font-family: 'Amiri, serif';
   font-size: var(--heading-secondary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color:var(--text-color-secondary)
 }
 
@@ -78,17 +81,31 @@ a{
   text-decoration: none;
   
 }
+
+.text-align{
+  margin-top: 13rem;
+}
+.process-text-1{
+  margin-top: 6rem;
+}
 .btn-main{
-  padding-top:60px;
+  position: relative;
+  top:1rem
+  
 }
 .btn-primary{
-background-color: #e0ceab;
+border:1.5px solid #e0ceab;
+background-color: #fff;
 color:#000;
 padding:14px;
 border-radius:3px;
 position: relative;
+
 }
 
+.btn-primary:hover{
+   background-color: #D4D4D4;
+}
 .btn-secondary{
 background-color: var(--btn-secondary-color);
 color:#000;
@@ -96,8 +113,8 @@ padding:10px;
 border-radius:3px;
 }
  .full-wdth-btn{
-  background-color: #FF7070;
-  color:#ffff
+ background-color: #e0ceab;
+  color:#000
  }
 
  .full-wdth-btn:hover{
@@ -142,7 +159,12 @@ border-radius:3px;
 .logo img{
   width:30%;
   margin: 0 auto;
- padding: 0;
+  padding: 2px 0 4px 0;
+
+}
+
+.footer-logo img{
+  margin-left: 15rem;
 }
 .inner-left{
   margin-bottom: 1rem;
@@ -215,6 +237,16 @@ video{
 }
 
 @media(max-width:810px) and (min-width:360px) {
+  h2{
+    font-size: 21px;
+  }
+  .left-text{
+    margin:0
+  }
+  .text-align{
+    position: relative;
+    top: -10rem;
+  }
   .header-content{
     max-width:19rem;
     display: flex;
@@ -375,7 +407,7 @@ video{
 
 .section-about .inner-right .inner-content{
   position: relative;
-  margin-top: 1.5rem;
+  margin-top: 10rem;
 }
 
 /* product section */
@@ -910,7 +942,9 @@ left:15.2%;
   border-radius: 1rem 1rem  1rem 1rem;
 
 }
-
+.about-content{
+  text-align: center;
+}
 .inner-right-v{
   width:100%;
   max-width: 30rem;

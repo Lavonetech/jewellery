@@ -39,7 +39,7 @@ function Footer () {
           {/* <h6 className="text-uppercase fw-bold mb-4">
           <FontAwesomeIcon icon={faGem} className="me-3" />Maera Jewellery
           </h6> */}
-          <div className='d-flex align-items-center justify-content-center logo ' >
+          <div className='d-flex align-items-center justify-content-center logo footer-logo' >
           <img src="/images/png-03.png"  style={{ height: '180px', width: '200px' }} />
           </div>
           </div>
@@ -73,7 +73,7 @@ function Footer () {
             <a href="https://www.instagram.com/maerajewellery?utm_source=qr" className="text-reset">Instagram</a>
           </p>
           <p>
-            <a href="#!" className="text-reset">WhatsApp</a>
+            <a href="https://wa.me/message/UF7PWAAWJEZZJ1" className="text-reset">WhatsApp</a>
           </p>
           <p>
             <a href="https://www.linkedin.com/company/maera-jewellery/" className="text-reset">LinkedIn</a>
@@ -84,8 +84,8 @@ function Footer () {
         <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           
           <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-          <p><FontAwesomeIcon icon={faHome} className="me-3" /> Colombo | Vancouver, Sri Lanka</p>
-      <p><FontAwesomeIcon icon={faEnvelope} className="me-3" /> info@maerajewellery.com</p>
+          <p><FontAwesomeIcon icon={faHome} className="me-3" /> Colombo | Vancouver</p>
+      <p><FontAwesomeIcon icon={faEnvelope} className="me-3" /> inquiries@maerajewellery.com</p>
       <p><FontAwesomeIcon icon={faPhone} className="me-3" />+94 701 465 161 / +1 778 223 4941</p>
    
     

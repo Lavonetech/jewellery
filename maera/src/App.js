@@ -55,7 +55,7 @@ function App() {
           <Route path="/mprocess" element={<Process/>} />
           <Route path="/about-us" element={<About/>} />
           <Route path="/contact" element={<Contact/>} />
-          <Route path="/gallery" element={<Gallery/>} />
+          <Route path="/ourcreation" element={<Gallery/>} />
           
           <Route element={<PrivateRoutes/>}>
           <Route path="/createproduct" element={<CreateProduct />} />

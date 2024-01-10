@@ -39,24 +39,14 @@ function  About() {
         <section className="py-3 py-md-5 py-xl-8">
   <div className='container'>
     <div className='row justify-content-center'>
-      <div className='col-lg-9 col-xl-9'>
-        <p className="mb-3">Meet the visionaries behind Maera Jewellery, where the fusion of craftsmanship and luxury takes center stage. Our two founders bring a unique blend of expertise to the world of jewelry. One founder is a certified gemologist, ensuring that the finest materials and gemstones, including exquisite Ceylonese blue sapphires, are at the core of our creations. The other founder, an engineer by profession, has an innate talent for design that flows effortlessly.</p>
-        <p className="mb-3">Hailing from a family with deep roots in the jewelry industry, our founders decided to leverage their rich heritage and knowledge to create something extraordinary. At Maera Jewellery, our mission is to bring forth unparalleled, complex pieces that are meticulously crafted with love and precision.</p>
-        <p className="mb-3">What truly sets us apart is our commitment to you, the customer. Our design process revolves around your desires and aspirations, ensuring that every piece we create is a reflection of your unique style and sentiment. Based in Ceylon, we take immense pride in our Ceylonese origins and the exceptional craftsmanship that is synonymous with our heritage. We source exquisite blue sapphires and other gems from Ceylon, in addition to handpicking diamonds and other precious stones from the world's best sources. While we operate from the heart of Ceylon, our global reach primarily serves North America and Europe. At Maera Jewellery, we are here to turn your jewelry dreams into a stunning reality, one exceptional piece at a time.</p>
+      <div className='col-lg-9 col-xl-9 about-content'>
+        <p className="mb-3">Discover Maera Jewellery, where craftsmanship meets luxury. Our founders, a certified gemologist and a design-savvy engineer, bring a unique blend of expertise to our creations. With deep roots in the jewelry industry, they leverage their heritage to craft extraordinary pieces. Our mission is to deliver meticulously crafted, complex designs that reflect your unique style and sentiment.</p>
+        <p className="mb-3">What sets us apart is our commitment to you. Our design process revolves around your desires, ensuring every piece is a personalized reflection. Based in Ceylon, we take pride in our heritage, sourcing exquisite blue sapphires and gems from Ceylon, along with GIA certified diamonds. While our roots are in Ceylon, our global reach serves North America and Europe. At Maera Jewellery, we transform your jewelry dreams into stunning reality, one exceptional piece at a time.</p>
+       
       </div>
     </div>
 
-    <div className='row justify-content-center'>
-      <div className='col-lg-9 col-md-9 mt-3'>
-        <a
-          href="/contact"
-          role="button"
-          className=" btn-primary  px-5 btn-gallery"
-        >
-          Contact Us
-        </a>
-      </div>
-    </div>
+    
   </div>
 </section>
 
@@ -65,8 +55,8 @@ function  About() {
     <div className='container'>
        <div className='row mt-5'>
       
-        <div className='col-xl-6 col-lg-6 col-md-6 col-sm-12 '>
-            <div className='text-align-center mt-5 left-text'>
+        <div className='col-xl-6 col-lg-6 col-md-6 col-sm-12 text-align'>
+            <div className='text-align-center  '>
             <h2 className=' h1 mb-3'>Our Vision</h2>
             
             <p className="mb-2">At Maera Jewellery, we envision redefining high jewelry—crafted with personalized luxury, responsibly sourced gems, and uncompromising dedication to quality. We are the epitome of bespoke elegance.</p>
@@ -77,7 +67,7 @@ function  About() {
             
         </div>
         <div className='col-xl-6 col-lg-6 col-md-6 col-sm-12 inner-right-v'>
-            <img className='img-fluid rounded' src="images/vision.jpg"/>
+            <img className='img-fluid' src="images/vision.jpg"/>
         </div>
 
        </div>
@@ -89,9 +79,9 @@ function  About() {
   <div className='container'>
   <div className='row mt-5'>
        <div className='col-xl-6 col-lg-6 col-md-6 col-sm-12  inner-right-v'>
-            <img className='img-fluid rounded' src="images/mission.png"/>
+            <img className='img-fluid' src="images/mission.jpg" style={{width:'30rem'}}/>
         </div>
-       <div className='col-xl-6 col-lg-6 col-md-6 col-sm-12' style={{marginTop:'6rem'}}>
+       <div className='col-xl-6 col-lg-6 col-md-6 col-sm-12 text-align' >
             <div className='text-align-center '>
             <h2 className=' h1 mb-3'>Our Mission</h2>
             <Lineanimation/>
