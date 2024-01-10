@@ -58,9 +58,9 @@ function Process() {
   <div className='container'>
   <div className='row mt-5'>
        <div className='col-xl-6 col-lg-6 col-md-6 col-sm-12  inner-right-v'>
-            <img className='img-fluid' src="images/p3.jpg" style={{width:"80%"}}/>
+            <img className='img-fluid ' src="images/p3.jpg" style={{width:"80%"}}/>
         </div>
-       <div className='col-xl-6 col-lg-6 col-md-9 col-sm-12' style={{marginTop:'12rem'}}>
+       <div className='col-xl-6 col-lg-6 col-md-9 col-sm-12'  style={{ marginTop: '12rem'}}>
             <div className='text-align-center '>
             <h2 className=' mb-3'>Quotation</h2>
             <p className="mb-3">Following the design phase, we'll provide you with a detailed quote for your personalized jewelry.  Our aim is to offer complete transparency and ensure your personalized jewelry fits both your vision and budget seamlessly.</p>

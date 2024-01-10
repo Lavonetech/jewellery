@@ -21,7 +21,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CancelIcon from '@mui/icons-material/Cancel';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBook, faLongArrowAltUp, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faBook, faLongArrowAltUp, faSignInAlt, faSignOutAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 const drawerWidth = 240;
 
@@ -233,11 +233,11 @@ const drawer = (
             <>
             <Link to="/register">
               <Button sx={{ color: '#000', marginRight: '20px',fontSize: '14px', border:'1px solid #e0ceab' }} onClick={() => { /* Add register logic */ }}>
-                Register
+              <FontAwesomeIcon icon={faUserPlus} className="me-3" />Register
               </Button>
               </Link>
              <Link to="/login"><Button  sx={{ color: '#000', marginRight: '50px', backgroundColor: '#e0ceab', fontSize: '14px',width: '120px' }} >
-                Login
+             <FontAwesomeIcon icon={faSignInAlt} className="me-3" /> Login
               </Button></Link> 
             </>
           )}

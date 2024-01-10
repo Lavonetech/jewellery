@@ -67,7 +67,7 @@ function  About() {
             
         </div>
         <div className='col-xl-6 col-lg-6 col-md-6 col-sm-12 inner-right-v'>
-            <img className='img-fluid' src="images/vision.jpg"/>
+            <img className='img-fluid' src="images/vision.jpg"style={{width:'30rem'}}/>
         </div>
 
        </div>

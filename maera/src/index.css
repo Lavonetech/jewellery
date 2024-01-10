@@ -265,6 +265,10 @@ video{
     position: relative;
     margin:0 7.5rem 0 0;
   }
+  .footer-logo{
+    margin-left: -8rem;
+   }
+ 
   .item{
     background-size:contain;
     background-repeat: no-repeat;
@@ -272,6 +276,7 @@ video{
     min-height:auto;
     
   }
+
 
   .about-item{
     position: relative;
@@ -333,7 +338,9 @@ video{
   
 
   }
-  
+  .inner-right-v{
+    margin-top: -8rem;
+  }
   .header-text{
     display:block;
     position: relative;
@@ -344,6 +351,7 @@ video{
     background-size:cover;
     background-repeat: no-repeat;
   }
+  
   .section-about{
     display: block;
     flex-direction: column;
@@ -359,7 +367,7 @@ video{
  
     margin-top:5rem
  }
-
+ 
  .section-background{
   position: relative;
   display:flex;
@@ -375,6 +383,9 @@ video{
   margin-top:1rem;
 }
 
+.process-text-3{
+ margin-bottom: -15rem;
+}
 }
 /*Intro section*/
 .section-about{
