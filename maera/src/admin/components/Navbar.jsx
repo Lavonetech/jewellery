@@ -19,10 +19,12 @@ import { AppBar,
     MenuItem,
     useTheme,
     CssBaseline,} from '@mui/material';
+    
 import {useDispatch} from 'react-redux';
 import FlexBetween from './FlexBetween';
 import { setMode } from '../state';
 import Sidebar from './Sidebar';
+import { Link } from 'react-router-dom';
 
 
 const Navbar =({isSidebarOpen, setIsSidebarOpen})=>{
@@ -65,7 +67,7 @@ const handleClose = () => setAnchorEl(null);
           </FlexBetween>
 
         </FlexBetween>
-        <Button href='/createproduct'sx={{backgroundColor:'#FF7070',fontWeight:'600',color:'#fff'}}>Create Product</Button>
+        <Button><Link to='/createproduct'sx={{fontWeight:'600'}} className='full-wdth-btn create-btn'>Create Product</Link></Button>
         {/* RIGHT SIDE */}
         <FlexBetween gap="1.5rem">
           <IconButton onClick={() => dispatch(setMode())}>

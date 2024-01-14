@@ -91,9 +91,6 @@ const userRegister = async (e) => {
                                 
                                 <Form.Control value={firstName} onChange={(e)=>setFirstName(e.target.value)} className='mb-2' placeholder='enter first name'/>
                               
-                             
-                               
-
                             </Form.Group>
                          <Form.Group>
                          <Form.Control  value={lastName} onChange={(e)=>setLastName(e.target.value)}className="mb-2" placeholder='enter last name'/>

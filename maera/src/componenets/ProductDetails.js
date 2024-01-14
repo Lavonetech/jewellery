@@ -264,6 +264,7 @@ If you don't find the size you're seeking listed, we provide inclusive sizing at
                       <option selected>Select a stone</option>
                       <option value="Amethyst">Amethyst</option>
                       <option value="Aquamarine">Aquamarine</option>
+                      <option value="Blue Sapphire">Blue Sapphire</option>
                       <option value="Chrysoberyl">Chrysoberyl</option>
                       <option value="Citrine">Citrine</option>
                       <option value="Diamond">Diamond</option>
@@ -277,12 +278,14 @@ If you don't find the size you're seeking listed, we provide inclusive sizing at
                       <option value="Pink Sapphire">Pink Sapphire</option>
                       <option value="Rose Quartz">Rose Quartz</option>
                       <option value="Ruby">Ruby</option>
+                      <option value="Smoky Quartz">Smoky Quartz</option>
                       <option value="Spinel">Spinel</option>
                       <option value="Topaz">Topaz</option>
                       <option value="Tourmaline">Tourmaline</option>
                       <option value="Turquoise">Turquoise</option>
                       <option value="Yellow Sapphire">Yellow Sapphire</option>
                       <option value="Zircon">Zircon</option>
+                      <option value="Sterling Silver">Sterling Silver</option>
                     </select>
                   </div>
                   {category && 

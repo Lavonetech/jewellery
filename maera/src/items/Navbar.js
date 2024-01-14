@@ -18,7 +18,6 @@ import {
   
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import CancelIcon from '@mui/icons-material/Cancel';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook, faLongArrowAltUp, faSignInAlt, faSignOutAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
@@ -141,14 +140,14 @@ const drawer = (
         // User is logged in
         <>
           <ListItem disablePadding>
-            <ListItemButton  onClick={Logout} sx={{border:'1px solid #e0ceab'}}>
+            <ListItemButton  onClick={Logout} >
             <FontAwesomeIcon icon={faSignOutAlt} className="me-3" />    <ListItemText children="LOGOUT" />
             
             </ListItemButton>
           </ListItem>
           {isAdmin && (
             <ListItem disablePadding>
-              <ListItemButton sx={{ backgroundColor: '#e0ceab'}}>
+              <ListItemButton  sx={{ color: '#1E1E1E', marginRight: '30px', backgroundColor: '#e0ceab', fontSize: '14px',width: '100px' }}>
                 <Link to="/products" style={{ textDecoration: 'none', color: 'inherit' }}>
                   <ListItemText children="DASHBOARD" />
                 </Link>
@@ -160,14 +159,14 @@ const drawer = (
         // User is not logged in
         <>
           <ListItem disablePadding>
-            <ListItemButton sx={{ backgroundColor: '#D4D4D4'}}>
+            <ListItemButton >
               <Link to="/register" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <ListItemText children="REGISTER" />
               </Link>
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton sx={{ backgroundColor: '#e0ceab'}}>
+            <ListItemButton >
               <Link to="/login" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <ListItemText children="LOGIN" />
               </Link>
@@ -206,9 +205,11 @@ const drawer = (
         </IconButton>
        
         </Box>
-       <div className='d-flex align-items-center justify-content-center logo'>
-          <Link to="/"><img src="/images/logo-1.png"  style={{ height: '70x', width: '90px' }} /></Link>
-          </div>
+        <div className=' d-flex align-items-center justify-content-space-between text-align-center logo'>
+      <Link to="/">
+        <img src="/images/png-03.png" style={{ height: '110px', width: '150px' }} />
+      </Link>
+    </div>
         <Box sx={{  display: { xs: 'none', sm: 'block'}}}>
          
       
@@ -216,7 +217,7 @@ const drawer = (
             // User is logged in
              // User is logged in
           <>
-         <Button variant="outlined"  sx={{ color: '#1E1E1E', marginRight: '30px',fontSize: '14px',border:'1px solid #e0ceab' }} onClick={Logout} >
+         <Button  sx={{ color: '#1E1E1E', marginRight: '30px',fontSize: '14px' }} onClick={Logout} >
          <FontAwesomeIcon icon={faSignOutAlt} className="me-3" />Logout
           </Button>
              
@@ -232,11 +233,11 @@ const drawer = (
             // User is not logged in
             <>
             <Link to="/register">
-              <Button sx={{ color: '#000', marginRight: '20px',fontSize: '14px', border:'1px solid #e0ceab' }} onClick={() => { /* Add register logic */ }}>
+              <Button sx={{ color: '#000', marginRight: '20px',fontSize: '14px' }} onClick={() => { /* Add register logic */ }}>
               <FontAwesomeIcon icon={faUserPlus} className="me-3" />Register
               </Button>
               </Link>
-             <Link to="/login"><Button  sx={{ color: '#000', marginRight: '50px', backgroundColor: '#e0ceab', fontSize: '14px',width: '120px' }} >
+             <Link to="/login"><Button  sx={{ color: '#000', marginRight: '50px', fontSize: '14px',width: '120px' }} >
              <FontAwesomeIcon icon={faSignInAlt} className="me-3" /> Login
               </Button></Link> 
             </>

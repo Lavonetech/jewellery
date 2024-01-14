@@ -140,7 +140,7 @@ const CreateProduct = () => {
           <div></div>
           <div className="form-end">
             <div className="button-holder">
-              <Button onClick={handleSubmit}>Create Product</Button>
+              <Button className="full-wdth-btn create-btn"onClick={handleSubmit}>Create Product</Button>
             </div>
           </div>
         </Form>
