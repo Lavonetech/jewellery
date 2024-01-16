@@ -1,10 +1,10 @@
 import Layout from "./admin/screens/Layout";
 import Home from "./componenets/Home";
 import ProductDetails from "./componenets/ProductDetails";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { themeSettings } from "./admin/theme";
 import Products from "./admin/screens/Products";
@@ -21,16 +21,19 @@ import Contact from "./componenets/Contact";
 import Gallery from "./componenets/Gallery";
 import EditUser from "./admin/screens/EditUser";
 import PrivateRoutes from "./utils/PriivateRoutes";
+import ScrollTop from "./componenets/ScrollTop";
 
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+
+
   return (
     <div>
-    
+   
       <BrowserRouter>
-      
+      <ScrollTop/>
         <ThemeProvider theme={theme}>
           <Routes>
             <Route element={<PrivateRoutes/>}>
@@ -46,8 +49,9 @@ function App() {
             </Route>
           </Routes>
         </ThemeProvider>
-        
+       
         <Routes>
+      
           <Route path="/" element={<Home />} />
           <Route path="/productdetails/:id"element={<ProductDetails />} />
           <Route exact path="/register" element={<Register />} />
@@ -55,7 +59,7 @@ function App() {
           <Route path="/mprocess" element={<Process/>} />
           <Route path="/about-us" element={<About/>} />
           <Route path="/contact" element={<Contact/>} />
-          <Route path="/ourcreation" element={<Gallery/>} />
+          <Route path="/ourcreations" element={<Gallery/>} />
           
           <Route element={<PrivateRoutes/>}>
           <Route path="/createproduct" element={<CreateProduct />} />
@@ -63,6 +67,7 @@ function App() {
           <Route path="/edituser/:id" element={<EditUser/>} />
           </Route>
         </Routes>
+      
       </BrowserRouter>
     </div>
   );

@@ -55,7 +55,11 @@ const Home = () => {
       }
     };
     getProductData();
+
+   
   }, [products]);
+
+
 
   return (
       <div>

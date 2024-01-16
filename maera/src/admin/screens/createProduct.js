@@ -3,6 +3,7 @@ import { Form, InputGroup, FormControl, Button, Spinner } from "react-bootstrap"
 import axios from "axios";
 import { Box, CssBaseline } from "@mui/material";
 
+import {useNavigate } from 'react-router-dom';
 
 const CreateProduct = () => {
   const [product, setProduct] = useState("");
@@ -13,7 +14,7 @@ const CreateProduct = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage,setSuccessMessage]=useState("")
   const [file, setFile] = useState([]);
-const [subImage,setSubImage]=useState([]);
+  const navigate=useNavigate()
 
   const handleProduct=(e)=>{
     setProduct(e.target.value);
@@ -57,7 +58,7 @@ const [subImage,setSubImage]=useState([]);
         setSuccessMessage("Product created successfully. You will redirect to the dashboard.");
         console.log("Successful", response.data);
         setTimeout(() => {
-          window.location.href = "/products";
+          navigate("/products");
         }, 3000);
       }
     } catch (error) {

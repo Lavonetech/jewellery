@@ -123,8 +123,8 @@ const drawer = (
       </ListItem>
       <ListItem disablePadding>
         <ListItemButton sx={{ textAlign: 'center' }}>
-          <Link to="/ourcreation" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <ListItemText primary="OUR CREATION" />
+          <Link to="/ourcreations" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <ListItemText primary="OUR CREATIONS" />
           </Link>
         </ListItemButton>
       </ListItem>

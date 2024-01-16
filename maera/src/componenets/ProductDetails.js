@@ -4,14 +4,16 @@ import React, { useState,useEffect } from "react";
 import Navbar from "../items/Navbar";
 import Footer from "../items/Footer";
 import axios from "axios";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link,  useNavigate, useParams } from "react-router-dom";
 import {jwtDecode} from 'jwt-decode';
 import Lineanimation from "../items/Lineanimation";
 import { Box } from "@mui/material";
 import { Spinner } from "react-bootstrap";
+import ScrollTop from "./ScrollTop";
 
 
 function ProductDetails() {
+
   const [activeImage, setActiveImage] = useState(0); 
   const [metal,setMetal]=useState("");
   const [stone,setStone]=useState("");
@@ -84,6 +86,7 @@ function ProductDetails() {
  },[item]);
 
 
+
   useEffect(()=>{
     const getProductData=async ()=>{
       try{
@@ -149,11 +152,12 @@ function ProductDetails() {
 
     getProductData();
   }, [id]);
-  const handleImageClick = (index) => {
-    setActiveImage(index);
-  };
+ 
+
+  
   return (
     <div>
+       <ScrollTop/>
        <div
         
       >
@@ -191,64 +195,26 @@ function ProductDetails() {
                 />
               </a>
             </div>
-            {
-              products.image.length>0 &&(
-                <div className="d-flex justify-content-center m-hover">
-                <div className=" mb-3 ">
-                  <a  target="_blank" data-type="image">
-                    <img
-                      style={{
-                        maxWidth: "100%",
-                        maxHeight: "15vh",
-                        margin: "auto",
-                      }}
-                     
-                      src={`http://63.250.47.54:5003/${products.image[1]}`}
-                    />
-                  </a>
-                </div>
-                <div className=" mb-3">
-                  <a  target="_blank" data-type="image">
-                    <img
-                      style={{
-                        maxWidth: "100%",
-                        maxHeight: "15vh",
-                        margin: "auto",
-                      }}
-                     
-                      src={`http://63.250.47.54:5003/${products.image[2]}`}
-                    />
-                  </a>
-                </div>
-                <div className=" mb-3">
-                  <a  target="_blank" data-type="image">
-                    <img
-                      style={{
-                        maxWidth: "100%",
-                        maxHeight: "15vh",
-                        margin: "auto",
-                      }}
-                     
-                      src={`http://63.250.47.54:5003/${products.image[3]}`}
-                    />
-                  </a>
-                </div>
-                <div className=" mb-3">
-                  <a  target="_blank" data-type="image">
-                    <img
-                      style={{
-                        maxWidth: "100%",
-                        maxHeight: "15vh",
-                        margin: "auto",
-                      }}
-                     
-                      src={`http://63.250.47.54:5003/${products.image[4]}`}
-                    />
-                  </a>
-                </div>
-                </div>
-              )
-            }
+            {products.image.length > 1 && (
+  <div className="d-flex justify-content-center m-hover">
+    {products.image.slice(1).map((image, index) => (
+      <div key={index} className="mb-3">
+        <a target="_blank" data-type="image">
+          <img
+            style={{
+              maxWidth: "100%",
+              maxHeight: "15vh",
+              margin: "auto",
+            }}
+            src={`http://63.250.47.54:5003/${image}`}
+           
+          />
+        </a>
+      </div>
+    ))}
+  </div>
+)}
+
             
             
            
@@ -396,8 +362,8 @@ If you don't find the size you're seeking listed, we provide inclusive sizing at
                 
                  
                 
-                <div className="d-grid mt-3">
-                <button onClick={placeOrder}class="btn-primary" type="button">Place Order Now</button>
+                <div className="d-grid mt-2">
+                <button onClick={placeOrder}class="btn-primary custom-btn" type="button">Place Order Now</button>
                 </div>
                   </form>
                   </div>

@@ -4,8 +4,15 @@ const mongoose=require('mongoose');
 const cookieParser=require('cookie-parser');
 const dotenv=require('dotenv');
 const cors=require("cors");
+
+const corsOptions = {
+    origin: 'http://maerajewellery.com',  // Add the desired IP address or domain
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    optionsSuccessStatus: 204,
+  };
 dotenv.config();
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json())
 const path = require('path');
 
