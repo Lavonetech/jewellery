@@ -26,7 +26,7 @@ function Contact () {
                         <div className='item-box-content'>
                         <FontAwesomeIcon icon={faPhone} style={{ fontSize: '3em', color: '#3A4750 ' }}/>
                     <h4 className='mt-3'>Phone</h4>
-                    <p className='mb-1'>+94 701 465 161 / +1 778 223 4941</p>
+                    <p className='mb-1'>+94-701-465-161 / +1 778-223-4941</p>
                         </div>
                     </div>
                    

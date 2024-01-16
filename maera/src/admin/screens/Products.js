@@ -121,7 +121,7 @@ function Products() {
           const formattedData = response.data;
           const products = formattedData.formattedProduct.map((product) => ({
             id: product.id,
-            image:product.image,
+            image:product.image[0],
             product: product.name,
             category:product.category,
             description: product.description,

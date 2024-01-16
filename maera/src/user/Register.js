@@ -105,11 +105,11 @@ const userRegister = async (e) => {
                                 <Form.Control value={password} onChange={(e)=>setPassword(e.target.value)}className="mb-2" placeholder="enter password"/>
                             </Form.Group>
                             <div className="d-grid mt-3">
-                        <button onClick={userRegister} class="btn full-wdth-btn" type="submit">Register</button>
+                        <button onClick={userRegister} class="btn-primary" type="submit">Register</button>
                 </div>
                         </Form>
                         <div className='mt-3 d-flex'>
-                            <div>Already register? </div>
+                            <div>Already registered? </div>
                             <Link to="/login"><span className='text-b  mx-1' style={{color:'#000'}}>Sign In</span></Link>
                         </div>
                     </div>

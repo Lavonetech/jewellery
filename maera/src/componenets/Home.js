@@ -38,13 +38,13 @@ const Home = () => {
           const productArray = formattedData.formattedProduct.map(
             (product) => ({
               id: product.id,
-              image: product.image,
+              image: product.image[0],
               product: product.name,
               description: product.description,
             })
           );
           setProducts(productArray);
-          const LimitProduct = products.slice(0, 8);
+          const LimitProduct = products.slice(0, 17);
           setSliceProduct(LimitProduct);
         } else {
           setErrorMessage("Can not find products.Please refresh page again");
@@ -66,15 +66,15 @@ const Home = () => {
         <div >
        
                 
-        <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleInterval" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
-  <div class="carousel-item" data-interval="2000">
+  <div class="carousel-item" data-interval="4000">
       <img src="images/p8.jpg" class="d-block w-100" alt="maera jewellery header image"/>
     </div>
-    <div class="carousel-item active" data-interval="2000">
+    <div class="carousel-item active" data-interval="4000">
       <img src="images/p3.jpg" class="d-block w-100" alt="maera jewellery header image"/>
     </div>
-    <div class="carousel-item" data-interval="2000">
+    <div className="carousel-item" data-interval="4000">
       <img src="images/p2.jpg" class="d-block w-100" alt="maera jewellery header image"/>
     </div>
     
@@ -186,7 +186,7 @@ const Home = () => {
                     <Link to={`/productdetails/${product.id}`}>
                       <div className="part-1">
                         <img
-                          src={`http://localhost:5003/${product.image}`}
+                          src={`http://63.250.47.54:5003/${product.image}`}
                           alt="product-image"
                         />
                         <ul>

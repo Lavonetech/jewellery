@@ -7,6 +7,7 @@ const storage = multer.diskStorage({
     cb(null, 'uploads');
   },
   filename: function (req, file, cb) {
+    console.log(file)
     cb(null, Date.now() + file.originalname);
   },
 });
@@ -22,7 +23,7 @@ const fileFilter = (req, file, cb) => {
 const upload = multer({
   storage: storage,
   fileFilter: fileFilter,
-  
+  limits:{files:5}
 });
 
 const imageUpload = async (req, res) => {
@@ -47,31 +48,53 @@ const imageUpload = async (req, res) => {
 
 
 const createProduct = async (req, res) => {
-  const images = req.file.path;
+  const images = req.files.map(file => file.path);
+  
 
   const { orderId, name, category, description } = req.body;
-
   try {
-    const product = new Products({
-      name,
-      orderId,
-      category,
-      description,
-      image: images,
-    });
+    
+      const product = new Products({
+        name,
+        orderId,
+        category,
+        description,
+        image: images,
+      });
 
-    const saveProduct = await product.save();
-    if (saveProduct) {
-      res.status(200).json({ message: "Product created successfully", saveProduct });
-    } else {
-      res.status(404).json("Product not found");
-    }
+      const saveProduct = await product.save();
+
+      if (saveProduct) {
+        res.status(200).json({ message: 'Product created successfully', saveProduct });
+      } else {
+        res.status(404).json('Product not found');
+      }
+  
   } catch (e) {
-    res.status(500).json({ message: "500 Server error" });
+    res.status(500).json({ message: '500 Server error' });
   }
 };
 
 
+// const subImages=async(req,res)=>{
+
+//   const subimage=req.files.map(file => file.path);
+
+//   try{
+//   const saveImages=new Products({
+//     subimages:subimage
+//   });
+
+//   const save=await saveImages.save();
+//   if(save){
+//     res.status(200).json({message:"sub images saved successfuly",save})
+//   }else{
+//     res.status(400).json({message:"sub images not saved"})
+//   }
+//   }catch(err){
+//     res.status(500).json({message:"500 server error, failed upload sub images",err})
+//   }
+// }
 const getProduct = async (req,res) => {
 
   try {
@@ -133,17 +156,35 @@ const getProductById = async (req, res) => {
   }
 };
 
+// const updateProduct = async (req, res) => {
+//   try {
+//     const productId = req.params.id;
+//     const updatedData = req.file.path;
+
+  
+//     // Find the product by ID and update the fields
+//     const updatedProduct = await Products.findByIdAndUpdate(productId, updatedData, { new: true });
+
+//     if (!updatedProduct) {
+//       res.status(404).json({ message: "Product not found" });
+//     } else {
+//       res.status(200).json({ message: "Product updated successfully", updatedProduct });
+//     }
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// };
+
 const updateProduct = async (req, res) => {
   try {
     const productId = req.params.id;
     const updatedData = req.body;
 
-    // Check if a file is uploaded
     if (req.file) {
-      // If file is uploaded, update the image field
       updatedData.image = req.file.path;
     }
 
+    // Find the product by ID and update the fields
     const updatedProduct = await Products.findByIdAndUpdate(productId, updatedData, { new: true });
 
     if (!updatedProduct) {
@@ -155,6 +196,8 @@ const updateProduct = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+
 
 
 module.exports = {upload,imageUpload,createProduct,getProduct,deleteProduct,updateProduct,getProductById};

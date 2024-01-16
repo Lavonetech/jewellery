@@ -1,86 +1,79 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import { Form,Row, Container, Spinner } from "react-bootstrap";
-import { Box } from "@mui/material";
+import { Form, Row, Container, Spinner } from "react-bootstrap";
 
 function EditProduct() {
   const { id } = useParams();
-  var navigate=useNavigate();
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
 
-  const [product, setProduct] = useState({
-    id: "",
-    name: "",
-    description: "",
-    image:""
-  });
+  const [file, setFile] = useState("");
 
   const [errorMessage, setErrorMessage] = useState("");
-  const [successMessage,setSuccessMessage]=useState("")
-  const[loading,setLoading]=useState(false);
-  const [file, setFile]=useState(null)
+  const [successMessage, setSuccessMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleName = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleCategory = (e) => {
+    setCategory(e.target.value);
+  };
+
+  const handleDescription = (e) => {
+    setDescription(e.target.value);
+  };
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(`http://63.250.47.54:5003/getproductbyid/${id}`);
-        console.log(response.data)
+        console.log(response.data);
         if (response.status === 200) {
           const productData = response.data.formattedProduct;
-          setProduct(() => ({
-            
-            id: productData.id,
-            name: productData.name,
-            category:productData.category,
-            description: productData.description,
-            image:productData.image
-            // Update with more fields as needed
-          }));
-
+          setName(productData.name);
+          setCategory(productData.category);
+          setDescription(productData.description);
         } else {
           console.log("Product not found");
         }
       } catch (err) {
-        console.log("500 server error", err);
+        console.log("500 server error");
         setErrorMessage("500 server error, please try again");
       }
     };
-  
+
     fetchProduct();
   }, [id]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setProduct({
-      ...product,
-      [name]: value,
-    });
-  };
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
-  }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const formData = new FormData();
-      formData.append("image", file);
-      formData.append("name", product.name);
-      formData.append("category", product.category);
-      formData.append("description", product.description);
+      formData.append("name", name);
+      formData.append("category", category);
+      formData.append("description", description);
+      formData.append("Image", file);
 
-      const response = await axios.put(`http://63.250.47.54:5003/update/${id}`, product);
-      console.log(response.data)
+      const response = await axios.put(`http://63.250.47.54:5003/update/${id}`, formData);
+
       if (response.status === 200) {
-        console.log("Product updated successfully",response);
-        setSuccessMessage("Product Successfuly updated.You will be redirect to the dashbord")
-        setLoading(true)
-        setTimeout(()=>{
-        navigate('/products')
-        },3000)
-        
-       
-        // You can redirect the user back to the product list or another page here
+        console.log("Product updated successfully");
+        setSuccessMessage("Product Successfully updated. You will be redirected to the dashboard");
+        setLoading(true);
+        setTimeout(() => {
+          navigate('/products');
+        }, 3000);
       } else {
-        console.log("Product not found");
+        console.log("Product not found or update failed");
       }
     } catch (err) {
       console.log("500 server error", err);
@@ -88,64 +81,54 @@ function EditProduct() {
     }
   };
 
-  
-  
-
   return (
     <div>
       <Container>
-          <Row>
-          <Box sx={{ textAlign: 'center', pt:0,mb:-10 }}>
-          <img src="/images/lo.png"  style={{ height: '200px', width: '200px',margin:"-3rem 0 -3rem 0" }} />
-        </Box>
-            <div className="col-md-6 mx-auto form-center">
+        <Row>
+          <div className="col-md-6 mx-auto form-center">
             {successMessage && <div className="alert alert-primary" role="alert">{successMessage}</div>}
-            {loading && <div className='d-flex'><Spinner animation="grow" variant="warning"/> <span>Please wait...</span></div>}
+            {loading && <div className='d-flex'><Spinner animation="grow" variant="warning" /> <span>Please wait...</span></div>}
             <h2 className="text-center">Edit Product</h2>
-            <Form onSubmit={handleSubmit} >
-            <Form.Group>
-              <Form.Label htmlFor="name">Product Name</Form.Label>
-              <Form.Control
-                type="text"
-                name="name"
-                value={product.name}
-                onChange={handleChange}
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label htmlFor="category">Product Category</Form.Label>
-              <Form.Control
-                type="text"
-                name="category"
-                value={product.category}
-                onChange={handleChange}
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label htmlFor="description">Description</Form.Label>
-              <Form.Control
-                as="textarea"
-                name="description"
-                value={product.description}
-                onChange={handleChange}
-                style={{ height: "150px" }} 
-              />
-            </Form.Group>
-            <Form.Group>
-                <Form.Label htmlFor="image">Product Image</Form.Label>
-                <Form.Control type="file"  onChange={handleFileChange} accept="image/*" />
+            <Form >
+              <Form.Group>
+                <Form.Label htmlFor="name">Product Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="name"
+                  value={name}
+                  onChange={handleName}
+                />
               </Form.Group>
-             
-           
-            {/* Add more fields as needed */}
-            <div className="d-grid mt-3">
-                <button class="btn full-wdth-btn" type="submit">Update product now</button>
-                </div>
-          </Form>
-            </div> 
-          </Row>
+              <Form.Group>
+                <Form.Label htmlFor="category">Product Category</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="category"
+                  value={category}
+                  onChange={handleCategory}
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label htmlFor="description">Description</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  name="description"
+                  value={description}
+                  onChange={handleDescription}
+                  style={{ height: "150px" }}
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label htmlFor="image">Product Image</Form.Label>
+                <Form.Control type="file" onChange={handleFileChange} accept="image/*" />
+              </Form.Group>
+              <div className="d-grid mt-3">
+                <button className="btn full-wdth-btn" type="submit" onClick={handleSubmit}>Update product now</button>
+              </div>
+            </Form>
+          </div>
+        </Row>
       </Container>
-      
       {errorMessage && <div className="alert alert-danger" role="alert">{errorMessage}</div>}
     </div>
   );

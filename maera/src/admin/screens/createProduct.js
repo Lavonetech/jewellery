@@ -12,8 +12,8 @@ const CreateProduct = () => {
   const [category, setCategory] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage,setSuccessMessage]=useState("")
-  const [file, setFile] = useState("");
-
+  const [file, setFile] = useState([]);
+const [subImage,setSubImage]=useState([]);
 
   const handleProduct=(e)=>{
     setProduct(e.target.value);
@@ -30,41 +30,46 @@ const CreateProduct = () => {
   }
   
   const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
+    setFile(Array.from(event.target.files));
   };
+ 
 
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       const formData = new FormData();
-     formData.append('Image', file);
-     formData.append('orderId', orderId);
-     formData.append('name', product);  
-     formData.append('category',category);
-     formData.append('description', description);
-      
-      const response = await axios.post("http://63.250.47.54:5003/createproduct",formData)
-       
-      if(response){
-        setSuccessMessage("Product created successfuly.You will redirect to the dashbord");
-        console.log("Successful",response.data);
-        setTimeout(()=>{
-          window.location.href = "/products";
-        },3000)
+      formData.append('orderId', orderId);
+      formData.append('name', product);
+      formData.append('category', category);
+      formData.append('description', description);
+  
+      // Append each file separately
+      for (let i = 0; i < file.length; i++) {
+        formData.append('Image', file[i]);
       }
-      
+  
+      const response = await axios.post("http://63.250.47.54:5003/createproduct", formData);
+  
+      if (response) {
+        setSuccessMessage("Product created successfully. You will redirect to the dashboard.");
+        console.log("Successful", response.data);
+        setTimeout(() => {
+          window.location.href = "/products";
+        }, 3000);
+      }
     } catch (error) {
-     setTimeout(()=>{
-      setErrorMessage(
-        "You cannot create a product. Please try again or contact the developer"
-      );
-     },3000)
+      setTimeout(() => {
+        setErrorMessage(
+          "You cannot create a product. Please try again."
+        );
+      }, 3000);
       console.error(error);
     }
   };
+  
 
   return (
     

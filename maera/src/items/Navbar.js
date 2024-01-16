@@ -147,7 +147,7 @@ const drawer = (
           </ListItem>
           {isAdmin && (
             <ListItem disablePadding>
-              <ListItemButton  sx={{ color: '#1E1E1E', marginRight: '30px', backgroundColor: '#e0ceab', fontSize: '14px',width: '100px' }}>
+              <ListItemButton  sx={{ color: '#1E1E1E', marginRight: '30px', border: '1px solid #e0ceab', fontSize: '14px',width: '100px' }}>
                 <Link to="/products" style={{ textDecoration: 'none', color: 'inherit' }}>
                   <ListItemText children="DASHBOARD" />
                 </Link>
@@ -205,9 +205,9 @@ const drawer = (
         </IconButton>
        
         </Box>
-        <div className=' d-flex align-items-center justify-content-space-between text-align-center logo'>
+        <div className=' col-lg-6 d-flex align-items-center justify-content-center logo'>
       <Link to="/">
-        <img src="/images/png-03.png" style={{ height: '110px', width: '150px' }} />
+        <img src="/images/png3.png" style={{ height: '110px', width: '150px' }}className='d-flex justify-content-center nav-logo' />
       </Link>
     </div>
         <Box sx={{  display: { xs: 'none', sm: 'block'}}}>
@@ -222,7 +222,7 @@ const drawer = (
           </Button>
              
          
-          {isAdmin && <Link to="/products"><Button  sx={{ color: '#1E1E1E', marginRight: '30px', backgroundColor: '#e0ceab', fontSize: '14px',width: '150px' }} >
+          {isAdmin && <Link to="/products"><Button  sx={{ color: '#1E1E1E', marginRight: '30px', border: '1px solid #e0ceab', fontSize: '14px',width: '150px' }} >
                 Dashbord
               </Button>
               </Link> 

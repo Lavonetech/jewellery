@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExpand, faHeart } from '@fortawesome/free-solid-svg-icons';
 import Lineanimation from '../items/Lineanimation';
 import { Link } from 'react-router-dom';
-import { Box } from '@mui/material';
 import { Spinner } from 'react-bootstrap';
 
 function Gallery () {
@@ -22,7 +21,7 @@ const [errorMessage,setErrorMessage]=useState("");
     
              const productArray=formattedData.formattedProduct.map((product)=>({
               id:product.id,
-              image:product.image,
+              image:product.image[0],
               product:product.name,
               description:product.description,
               

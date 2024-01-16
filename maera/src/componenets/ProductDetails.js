@@ -12,7 +12,7 @@ import { Spinner } from "react-bootstrap";
 
 
 function ProductDetails() {
- 
+  const [activeImage, setActiveImage] = useState(0); 
   const [metal,setMetal]=useState("");
   const [stone,setStone]=useState("");
   const [size,setSize]=useState("");
@@ -149,7 +149,9 @@ function ProductDetails() {
 
     getProductData();
   }, [id]);
-
+  const handleImageClick = (index) => {
+    setActiveImage(index);
+  };
   return (
     <div>
        <div
@@ -185,10 +187,70 @@ function ProductDetails() {
                     margin: "auto",
                   }}
                  
-                  src={`http://63.250.47.54:5003/${products.image}`}
+                  src={`http://63.250.47.54:5003/${products.image[0]}`}
                 />
               </a>
             </div>
+            {
+              products.image.length>0 &&(
+                <div className="d-flex justify-content-center m-hover">
+                <div className=" mb-3 ">
+                  <a  target="_blank" data-type="image">
+                    <img
+                      style={{
+                        maxWidth: "100%",
+                        maxHeight: "15vh",
+                        margin: "auto",
+                      }}
+                     
+                      src={`http://63.250.47.54:5003/${products.image[1]}`}
+                    />
+                  </a>
+                </div>
+                <div className=" mb-3">
+                  <a  target="_blank" data-type="image">
+                    <img
+                      style={{
+                        maxWidth: "100%",
+                        maxHeight: "15vh",
+                        margin: "auto",
+                      }}
+                     
+                      src={`http://63.250.47.54:5003/${products.image[2]}`}
+                    />
+                  </a>
+                </div>
+                <div className=" mb-3">
+                  <a  target="_blank" data-type="image">
+                    <img
+                      style={{
+                        maxWidth: "100%",
+                        maxHeight: "15vh",
+                        margin: "auto",
+                      }}
+                     
+                      src={`http://63.250.47.54:5003/${products.image[3]}`}
+                    />
+                  </a>
+                </div>
+                <div className=" mb-3">
+                  <a  target="_blank" data-type="image">
+                    <img
+                      style={{
+                        maxWidth: "100%",
+                        maxHeight: "15vh",
+                        margin: "auto",
+                      }}
+                     
+                      src={`http://63.250.47.54:5003/${products.image[4]}`}
+                    />
+                  </a>
+                </div>
+                </div>
+              )
+            }
+            
+            
            
           </div>
           )}
@@ -238,7 +300,7 @@ If you don't find the size you're seeking listed, we provide inclusive sizing at
                 <div className="mt-3">
                   <form>
                   <div className="d-flex text-b ">
-                    <h5>Metal</h5>
+                    <h5 className="mt-2">Metal</h5>
                   
                     <select
                     value={metal}
@@ -253,8 +315,7 @@ If you don't find the size you're seeking listed, we provide inclusive sizing at
                     </select>
                   </div>
                   <div className="d-flex mt-2">
-                    <h5>Stone</h5>
-
+                    <h5 className="mt-2">Stone</h5>
                     <select
                     value={stone}
                     onChange={(e) => setStone(e.target.value)}
@@ -290,7 +351,7 @@ If you don't find the size you're seeking listed, we provide inclusive sizing at
                   </div>
                   {category && 
                   <div className="d-flex mt-2">
-                  <h5> Size</h5>
+                  <h5 className="mt-2"> Size</h5>
 
                   <select
                   value={size}
@@ -321,7 +382,7 @@ If you don't find the size you're seeking listed, we provide inclusive sizing at
                
                   }
                   
-                 <label htmlFor="message" className="custom-label">
+                 <label htmlFor="message" className="custom-label mt-2">
               Message
             </label>
             <textarea
@@ -336,7 +397,7 @@ If you don't find the size you're seeking listed, we provide inclusive sizing at
                  
                 
                 <div className="d-grid mt-3">
-                <button onClick={placeOrder}class="btn full-wdth-btn " type="button">Place Order Now</button>
+                <button onClick={placeOrder}class="btn-primary" type="button">Place Order Now</button>
                 </div>
                   </form>
                   </div>
@@ -366,7 +427,7 @@ If you don't find the size you're seeking listed, we provide inclusive sizing at
                 <div  className="single-product">
                 <Link to={`/productdetails/${product.id}`}>
                   <div className="part-1">
-                 <img src={`http://63.250.47.54:5003/${product.image}`} alt="product-image" />
+                 <img src={`http://63.250.47.54:5003/${product.image[0]}`} alt="product-image" />
                     <ul>
                       <li>
                         <a href="#">

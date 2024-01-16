@@ -96,9 +96,7 @@ function EditUser () {
     <div>
     <div className='container'>
     <div className='row'>
-    <Box sx={{ textAlign: 'center', pt:0,mb:-10 }}>
-          <img src="/images/lo.png"  style={{ height: '200px', width: '200px',margin:"-3rem 0 -3rem 0" }} />
-        </Box>
+   
       <div className="col-md-6 mx-auto form-center">
       {successMessage && <div className="alert alert-primary" role="alert">{successMessage}</div>}
       {loading && <div className='d-flex'><Spinner animation="grow" variant="warning"/> <span>Please wait...</span></div>}

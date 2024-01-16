@@ -40,7 +40,7 @@ function Footer () {
           <FontAwesomeIcon icon={faGem} className="me-3" />Maera Jewellery
           </h6> */}
           <div className='d-flex align-items-center justify-content-center logo footer-logo' >
-          <img src="/images/png-03.png"  style={{ height: '180px', width: '200px' }} />
+          <img src="/images/png3.png"  style={{ height: '180px', width: '200px' }} />
           </div>
           </div>
 
@@ -56,7 +56,7 @@ function Footer () {
             <a href="process" className="text-reset">Our Process</a>
           </p>
           <p>
-            <a href="gallery" className="text-reset">Gallery</a>
+            <a href="ourcreation" className="text-reset">Our Creations</a>
           </p>
           <p>
             <a href="contact" className="text-reset">Contact Us</a>
@@ -86,7 +86,7 @@ function Footer () {
           <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
           <p><FontAwesomeIcon icon={faHome} className="me-3" /> Colombo | Vancouver</p>
       <p><FontAwesomeIcon icon={faEnvelope} className="me-3" /> inquiries@maerajewellery.com</p>
-      <p><FontAwesomeIcon icon={faPhone} className="me-3" />+94 701 465 161 / +1 778 223 4941</p>
+      <p><FontAwesomeIcon icon={faPhone} className="me-3" />+94-701-465-161 / +1 778-223-4941</p>
    
     
         </div>

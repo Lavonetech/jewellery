@@ -75,12 +75,12 @@ function Login () {
                                 <Form.Control  type="password" value={password} onChange={(e)=>setPassword(e.target.value)} className="mb-2" placeholder="enter password"/>
                             </Form.Group>
                             <div className="d-grid mt-3">
-                        <button  onClick={handleLogin} class="btn full-wdth-btn" type="submit">Sign In</button>
+                        <button  onClick={handleLogin} class="btn-primary" type="submit">Sign In</button>
                 </div>
                         </Form>
                         <div className='d-flex mt-3'>
-                            <div>Not register ?</div>
-                            <Link to="/register"><span className='text-b  mx-1' style={{color:'#000'}}>Register</span></Link>
+                            <div>Not registered?</div>
+                            <Link to="/register"><span className='text-b  mx-1' style={{color:'#000'}}>Register Now</span></Link>
                         </div>
                     </div>
                  </div>

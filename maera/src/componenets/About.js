@@ -18,7 +18,7 @@ function About() {
             controls={false}
             indicators={false}
             fade
-            interval={2000}
+            
             className="col-xl-12  col-sm-12 zoom-carousel"
           >
             <Carousel.Item
@@ -123,7 +123,7 @@ function About() {
             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 inner-right-v">
               <img
                 className="img-fluid"
-                src="images/m.jpg"
+                src="images/mission.jpg"
                 style={{ width: "20rem" }}
               />
             </div>
