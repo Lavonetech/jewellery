@@ -1,5 +1,6 @@
 const Products = require("../Model/Product");
 const multer=require('multer');
+const { findByIdAndDelete } = require("../Model/Users");
 
 
 const storage = multer.diskStorage({
@@ -175,28 +176,48 @@ const getProductById = async (req, res) => {
 //   }
 // };
 
+// const updateProduct = async (req, res) => {
+//   try {
+//     const productId = req.params.id;
+//     const updatedData = req.body;
+
+//     if (req.file) {
+//       updatedData.image = req.file.path;
+//     }
+
+//     // Find the product by ID and update the fields
+//     const updatedProduct = await Products.findByIdAndUpdate(productId, updatedData, { new: true });
+
+//     if (!updatedProduct) {
+//       res.status(404).json({ message: "Product not found" });
+//     } else {
+//       res.status(200).json({ message: "Product updated successfully", updatedProduct });
+//     }
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// };
+
 const updateProduct = async (req, res) => {
   try {
     const productId = req.params.id;
     const updatedData = req.body;
+      const newImagePath =  req.files.map(file => file.path);
+      updatedData.image=newImagePath;
+    
+            const updatedProduct = await Products.findByIdAndUpdate(productId, updatedData, { new: true });
 
-    if (req.file) {
-      updatedData.image = req.file.path;
-    }
-
+            if (!updatedProduct) {
+              res.status(404).json({ message: "Product not found" });
+            } else {
+              res.status(200).json({ message: "Product updated successfully", updatedProduct });
+            }
     // Find the product by ID and update the fields
-    const updatedProduct = await Products.findByIdAndUpdate(productId, updatedData, { new: true });
-
-    if (!updatedProduct) {
-      res.status(404).json({ message: "Product not found" });
-    } else {
-      res.status(200).json({ message: "Product updated successfully", updatedProduct });
-    }
+  
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
-
 
 
 

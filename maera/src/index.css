@@ -81,6 +81,10 @@ a{
   text-decoration: none;
   
 }
+.label{
+  display: flex;
+  gap:2px
+}
 
 
 .process-text-1{
@@ -177,7 +181,7 @@ border-radius:3px;
   margin:0 4.5rem 0 0;
 }
 .footer-logo img{
-  margin-left: 15rem;
+  margin-left: 3rem;
 }
 .inner-left{
   margin-bottom: 1rem;
@@ -263,6 +267,9 @@ video{
 }
 
 @media(max-width:812px) and (min-width:350px) {
+  .footer-logo img{
+    margin-left: 15rem;
+  }
   .custom-btn{
     max-width:38rem;
     width: 100%;

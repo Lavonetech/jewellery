@@ -57,7 +57,7 @@ const userRegister = async (e) => {
                 setErrorMessage("")
             },4000)
         } else {
-            setErrorMessage("An internal server error occurred. Please try again later.");
+            setErrorMessage("Please ensure all required information is provided");
             setTimeout(()=>{
                 setErrorMessage("")
             },4000)
@@ -88,20 +88,25 @@ const userRegister = async (e) => {
                         <h2 className='text-center'>Register here</h2>
                         <Form>
                             <Form.Group>
-                                
+                           
+                             <Form.Label className='label'><span style={{color:'red'}}>*</span>First Name</Form.Label>
                                 <Form.Control value={firstName} onChange={(e)=>setFirstName(e.target.value)} className='mb-2' placeholder='enter first name'/>
                               
                             </Form.Group>
                          <Form.Group>
+                         <Form.Label className='label'><span style={{color:'red'}}>*</span>Last Name</Form.Label>
                          <Form.Control  value={lastName} onChange={(e)=>setLastName(e.target.value)}className="mb-2" placeholder='enter last name'/>
                          </Form.Group>
                             <Form.Group>
+                            <Form.Label className='label'><span style={{color:'red'}}>*</span>Email Address</Form.Label>
                                 <Form.Control value={email} onChange={(e)=>setEmail(e.target.value)}className="mb-2"placeholder="enter your email address"/>
                             </Form.Group>
                             <Form.Group>
+                            <Form.Label className='label'>Phone Number(optional)</Form.Label>
                                 <Form.Control value={phoneNumber} onChange={(e)=>setPhoneNumber(e.target.value)}className="mb-2"placeholder="enter your phone number"/>
                             </Form.Group>
                             <Form.Group>
+                            <Form.Label className='label'><span style={{color:'red'}}>*</span>Password</Form.Label>
                                 <Form.Control value={password} onChange={(e)=>setPassword(e.target.value)}className="mb-2" placeholder="enter password"/>
                             </Form.Group>
                             <div className="d-grid mt-3">

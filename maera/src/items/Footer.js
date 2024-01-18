@@ -53,10 +53,10 @@ function Footer () {
             <a href="about-us" className="text-reset">About Us</a>
           </p>
           <p>
-            <a href="process" className="text-reset">Our Process</a>
+            <a href="mprocess" className="text-reset">Our Process</a>
           </p>
           <p>
-            <a href="ourcreation" className="text-reset">Our Creations</a>
+            <a href="ourcreations" className="text-reset">Our Creations</a>
           </p>
           <p>
             <a href="contact" className="text-reset">Contact Us</a>

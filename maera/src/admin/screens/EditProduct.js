@@ -10,7 +10,7 @@ function EditProduct() {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
 
-  const [file, setFile] = useState("");
+  const [file, setFile] = useState([]);
 
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
@@ -51,7 +51,7 @@ function EditProduct() {
   }, [id]);
 
   const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
+    setFile(Array.from(event.target.files));
   };
 
   const handleSubmit = async (e) => {
@@ -61,9 +61,11 @@ function EditProduct() {
       formData.append("name", name);
       formData.append("category", category);
       formData.append("description", description);
-      formData.append("Image", file);
+      for (let i = 0; i < file.length; i++) {
+        formData.append('Image', file[i]);
+      }
 
-      const response = await axios.put(`http://63.250.47.54:5003/update/${id}`, formData);
+      const response = await axios.put(`http://localhost:5003/update/${id}`, formData);
 
       if (response.status === 200) {
         console.log("Product updated successfully");
@@ -120,7 +122,7 @@ function EditProduct() {
               </Form.Group>
               <Form.Group>
                 <Form.Label htmlFor="image">Product Image</Form.Label>
-                <Form.Control type="file" onChange={handleFileChange} accept="image/*" />
+                <Form.Control type="file" onChange={handleFileChange} accept="image/*" multiple />
               </Form.Group>
               <div className="d-grid mt-3">
                 <button className="btn full-wdth-btn" type="submit" onClick={handleSubmit}>Update product now</button>

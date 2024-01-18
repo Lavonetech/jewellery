@@ -21,7 +21,7 @@ function Login () {
             email,
             password
         });
-        const response=await axios.post("http://63.250.47.54:5003/login",user);
+        const response=await axios.post("https://63.250.47.54:5003/login",user);
         if(response.status===200){
             const token=response.data.token;
             console.log("token",token);
