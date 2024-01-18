@@ -65,7 +65,7 @@ function EditProduct() {
         formData.append('Image', file[i]);
       }
 
-      const response = await axios.put(`http://localhost:5003/update/${id}`, formData);
+      const response = await axios.put(`http://63.250.47.54:5003/update/${id}`, formData);
 
       if (response.status === 200) {
         console.log("Product updated successfully");

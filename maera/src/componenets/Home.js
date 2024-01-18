@@ -31,7 +31,7 @@ const Home = () => {
   useEffect(() => {
     const getProductData = async () => {
       try {
-        const response = await axios.get("https://63.250.47.54:5003/getproduct");
+        const response = await axios.get("http://63.250.47.54:5003/getproduct");
         if (response.status === 200) {
           const formattedData = response.data;
 
@@ -42,7 +42,7 @@ const Home = () => {
               product: product.name,
               description: product.description,
             })
-          );
+          )
           setProducts(productArray);
           const LimitProduct = products.slice(0,13);
           setSliceProduct(LimitProduct);
