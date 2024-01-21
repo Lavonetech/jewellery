@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.cb81c474.css",
+    "main.js": "/static/js/main.61137e5f.js",
+    "static/media/Sometimes Times.ttf": "/static/media/Sometimes Times.82c81a3e13df7a58809a.ttf",
+    "static/media/BentonSans Book.otf": "/static/media/BentonSans Book.098268cfd66f41ece540.otf",
+    "index.html": "/index.html",
+    "main.cb81c474.css.map": "/static/css/main.cb81c474.css.map",
+    "main.61137e5f.js.map": "/static/js/main.61137e5f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cb81c474.css",
+    "static/js/main.61137e5f.js"
+  ]
+}

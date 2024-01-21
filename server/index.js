@@ -5,7 +5,7 @@ const cookieParser=require('cookie-parser');
 const dotenv=require('dotenv');
 const cors=require("cors");
 
-;
+
 dotenv.config();
 app.use(cors());
 app.use(express.json())
@@ -18,6 +18,14 @@ const orderRouter=require('./routers/orderRoutes');
 app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+  app.get('*', (req, res) =>
+    res.sendFile(
+      path.resolve(__dirname, '../', 'client', 'build', 'index.html')
+    )
+  );
+ 
 const PORT = process.env.PORT;
 mongoose.connect(process.env.MONGO_URI,{
     useNewUrlParser: true,

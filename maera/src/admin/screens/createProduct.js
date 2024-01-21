@@ -52,13 +52,19 @@ const CreateProduct = () => {
         formData.append('Image', file[i]);
       }
   
-      const response = await axios.post("http://63.250.47.54:5003/createproduct", formData);
+      const response = await axios.post("http://localhost:5003/createproduct",formData);
   
       if (response) {
         setSuccessMessage("Product created successfully. You will redirect to the dashboard.");
         console.log("Successful", response.data);
         setTimeout(() => {
           navigate("/products");
+        }, 3000);
+      }else{
+        setTimeout(() => {
+          setErrorMessage(
+            "An external error. Please try again."
+          );
         }, 3000);
       }
     } catch (error) {
