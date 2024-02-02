@@ -85,7 +85,7 @@ function Footer () {
           
           <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
           <p><FontAwesomeIcon icon={faHome} className="me-3" /> Colombo | Vancouver</p>
-      <p><FontAwesomeIcon icon={faEnvelope} className="me-3" /> inquiries@maerajewellery.com</p>
+      <p><FontAwesomeIcon icon={faEnvelope} className="me-3" /> info@maerajewellery.com</p>
       <p><FontAwesomeIcon icon={faPhone} className="me-3" />+94-701-465-161 / +1 778-223-4941</p>
    
     
@@ -94,7 +94,13 @@ function Footer () {
     </div>
   </section>
 
-
+<section>
+<div className='footer-bottom  d-flex justify-content-center align-items-center pt-3' >
+  <p>All rights reserved 2024 by Maera Jewellery</p>
+  <p>|</p>
+  <p> Design & Developed by <a href="https://www.lavontech.com/">team Lavontech</a></p>
+</div>
+</section>
 
  
  
